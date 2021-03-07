@@ -1,35 +1,37 @@
-
 exports.min = function min(array) {
-  if (array == '' || array == [] || array == underfined)
+  if (!array || array.length == 0) {
     return 0;
-  else {
-    let min = array[0];
-    for (let i = 1; i < array.length; i++)
-      if (min > arrai[i])
-        min = arrai[i];
-    return min;
   }
+  let res = array[0];
+  for (let i = 1; i < array.length; i++) {
+    if (array[i] < res) {
+      res = array[i];
+    }
+  }
+  return res;
 }
 
 exports.max = function max(array) {
-  if (array == '' || array == [] || array == underfined)
+  if (!array || array.length == 0) {
     return 0;
-  else {
-    let max = array[0];
-    for (let i = 1; i < array.length; i++)
-      if (max > arrai[i])
-        max = arrai[i];
-    return max;
   }
+  let res = array[0];
+  for (let i = 1; i < array.length; i++) {
+    if (array[i] > res) {
+      res = array[i];
+    }
+  }
+  return res;
 }
 
 exports.avg = function avg(array) {
-  if (array == '' || array == [] || array == underfined)
+  if (!array || array.length == 0) {
     return 0;
-  else {
-    let sum = 0;
-    for (let i = 0; i < array.length; i++)
-      sum += array[i];
-    return sum / array.length;
   }
+  let res = array[0];
+  for (let i = 1; i < array.length; i++) {
+    res = res + array[i];
+  }
+  if (res == 0) { return 0; }
+  else { return res / array.length; }
 }
